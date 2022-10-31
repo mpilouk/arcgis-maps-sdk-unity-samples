@@ -36,8 +36,13 @@ public class RouteManager : MonoBehaviour
     private int StopCount = 2;
     private Queue<GameObject> stops = new Queue<GameObject>();
     private bool routing = false;
+    public bool RoutingStatus()
+    {
+        return routing;
+    }
     private string routingURL = "https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve";
     private List<GameObject> breadcrumbs = new List<GameObject>();
+    public List<GameObject> GetRoutePoints() { return breadcrumbs; }
 
     private LineRenderer lineRenderer;
 
